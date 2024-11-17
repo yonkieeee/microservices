@@ -1,0 +1,5 @@
+Flask~=3.1.0
+Flask-RESTful~=0.3.10
+SQLAlchemy~=2.0.36
+firebase-admin~=6.6.0
+python-dotenv~=1.0.1
