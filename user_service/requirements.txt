@@ -3,3 +3,4 @@ Flask-RESTful~=0.3.10
 SQLAlchemy~=2.0.36
 firebase-admin~=6.6.0
 python-dotenv~=1.0.1
+psycopg2-binary~=2.9.10

@@ -4,7 +4,7 @@ FROM python:3.12-slim
 WORKDIR /app
 
 # Копіюємо requirements.txt і встановлюємо залежності
-COPY requirements.txt /app/
+COPY ./requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Копіюємо увесь код проєкту в контейнер
@@ -14,4 +14,4 @@ COPY . /app/
 EXPOSE 8000
 
 # Запускаємо ваш Python застосунок
-CMD ["python","-m", "thing_app"]
+CMD ["python", "app.py"]

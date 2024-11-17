@@ -1,12 +1,14 @@
+import os
 from random import uniform
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from user_service.user_model import Base, User
+from user_model import Base, User
 
 
 class UserDatabase:
     def __init__(self):
-        self.engine = create_engine("postgresql://postgres:1234@localhost:5432/booking_info")
+        database_url = os.getenv('DATABASE_URL', 'postgresql://postgres:1234@localhost:5432/booking_info')
+        self.engine = create_engine(database_url)
         Base.metadata.create_all(self.engine)
 
     def add_user(self, user_name, user_surname):

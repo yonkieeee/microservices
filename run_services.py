@@ -1,14 +1,19 @@
 import threading
 import subprocess
-
+import os
+import sys
 
 def run_user_service():
-    subprocess.run(["python", "user_service/user_app.py"])
-
+    # Вказуємо абсолютний шлях до activate скрипта
+    activate_script = os.path.join(os.getcwd(), '.\\venv\\Scripts\\activate.bat')
+    # Команда для активації середовища і запуску сервісу
+    subprocess.run([activate_script, "&&", "python", "user_service/app.py"], shell=True)
 
 def run_thing_service():
-    subprocess.run(["python", "thing_service/thing_app.py"])
-
+    # Вказуємо абсолютний шлях до activate скрипта
+    activate_script = os.path.join(os.getcwd(), '.\\venv\\Scripts\\activate.bat')
+    # Команда для активації середовища і запуску сервісу
+    subprocess.run([activate_script, "&&", "python", "thing_service/app.py"], shell=True)
 
 if __name__ == "__main__":
     # Створення потоків для кожного сервісу
